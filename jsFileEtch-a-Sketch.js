@@ -13,10 +13,13 @@ function createRows(rowNum) {
         const row = document.createElement('div');
         container.appendChild(row).className('row');
     };
-}
 
-function createCollums(cellNum) {
-    for (c = 0; c < cellNum; c++);
-    const newCell = document.createElement('div');
-    conta
+    function createCollums(cellNum) {
+        for (i = 0; i < rows.length; i++){
+            for (c = 0; c < cellNum; c++) {
+                const newCell = document.createElement('div');
+                container.appendChild('newCwll').className = 'cell';
+            }
+        }
+    }
 }

@@ -5,10 +5,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project: Etch a Sketch</title>
-    <link rel="stylesheet" href="jsFileEtch-a-Sketch.js">
+    <style>
+        .cell {
+            border: 1px solid gray;
+            min-width: 20px;
+            min-height: 20px;
+            display: inline-block;
+            margin-right: 2px;
+        }
+
+        div.gridRow:hover {
+            background-color: yellow;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
+    <input class="inputRow" type="button" value="Choose Rows Size">
+    <input class="inputCell" type="button" value="Choose Cells Size">
+    <div id="container">
     </div>
 </body>
+<script>
+const container = document.getElementById("container");
+let rows = document.getElementsByClassName("gridRow");
+let cells = document.getElementsByClassName("cell");
+let inputRow = document.getElementsByClassName("inputRow");
+let inputCell = document.getElementsByClassName("inputCell");
+
+
+defaultGrid();
+
+function defaultGrid() {
+    makeRows(16);
+    makeColumns(8);
+}
+
+//Criar linha 
+function makeRows(rowNum) {
+    for (r = 0; r < rowNum; p=r++) {
+        let row = document.createElement("div");
+        container.appendChild(row).className = "gridRow";
+    };
+};
+
+function makeColumns(cellNum) {
+    for (i = 0; i < rows.length; i++) {
+        for (j = 0; j < cellNum; j++) {
+            let newCell = document.createElement("div");
+            rows[j].appendChild(newCell).className = "cell";
+        };
+    };
+};
+
+
+
+</script>
 </html>

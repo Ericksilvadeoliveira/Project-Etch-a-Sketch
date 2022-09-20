@@ -20,29 +20,60 @@
     </style>
 </head>
 <body>
-    <input class="inputRow" type="button" value="Choose Rows Size">
-    <input class="inputCell" type="button" value="Choose Cells Size">
+    <button>Grid Size</button>
     <div id="container">
     </div>
 </body>
 <script>
 const container = document.getElementById("container");
+const container2 = document.createElement("div");
 let rows = document.getElementsByClassName("gridRow");
 let cells = document.getElementsByClassName("cell");
-let inputRow = document.getElementsByClassName("inputRow");
-let inputCell = document.getElementsByClassName("inputCell");
+let chooseGrid = document.querySelector("button")
 
+chooseGrid.addEventListener('click', function() {
+    let rowSize = window.prompt('Row Size:');
+    console.log(rowSize);
+    let cellSize = window.prompt('Cell Size:');
+    console.log(cellSize);
+    
+
+    container2.replaceChild = defaultGrid();
+
+    function defaultGrid() {
+        makeRows(rowSize);
+        makeColumns(cellSize);
+    }
+
+    //Criar linha 
+    function makeRows(rowNum) {
+        for (r = 0; r < rowNum; r++) {
+            let row = document.createElement("div");
+            container2.appendChild(row).className = "gridRow";
+        };
+    };
+
+    function makeColumns(cellNum) {
+        for (i = 0; i < rows.length; i++) {
+            for (j = 0; j < cellNum; j++) {
+                let newCell = document.createElement("div");
+                rows[j].appendChild(newCell).className = "cell";
+            };
+        };
+    };
+
+})
 
 defaultGrid();
 
 function defaultGrid() {
-    makeRows(16);
-    makeColumns(8);
+    makeRows(10);
+    makeColumns(10);
 }
 
 //Criar linha 
 function makeRows(rowNum) {
-    for (r = 0; r < rowNum; p=r++) {
+    for (r = 0; r < rowNum; r++) {
         let row = document.createElement("div");
         container.appendChild(row).className = "gridRow";
     };

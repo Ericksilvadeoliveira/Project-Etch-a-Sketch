@@ -1,0 +1,43 @@
+body {
+    background-color: #4774EE;
+}
+h1 {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    margin: 0px;
+    padding: 10px;
+}
+
+.controles {
+    background-color: #0440D6;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+.controlesInterior {
+    text-align: center;
+}
+h3 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.gridSize {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+button {
+    border-radius: 10px;
+    border: 1px white;
+}
+.controles, h3, .gridSize, button, input {
+    margin: 0px;
+    padding: 5px;
+}

@@ -5,90 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project: Etch a Sketch</title>
-    <style>
-        .cell {
-            border: 1px solid gray;
-            min-width: 20px;
-            min-height: 20px;
-            display: inline-block;
-            margin-right: 2px;
-        }
-
-        div.gridRow:hover {
-            background-color: yellow;
-        }
-    </style>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <button>Grid Size</button>
-    <div id="container">
+    <h1>Etch A Sketch</h1>
+    <div class="container">
+        <div class="controles">
+            <h3>Opções de Controle</h3>
+            <div class="controlesInterior">
+                <div class="gridSize">8x8</div>
+                <input type="range" min="2" max="30" value="8"><br>
+                <button class="apply">Confirmar</button>
+                <button class="reset">Limpar</button>
+            </div>
+        </div>
+        <div class="grid"></div>
     </div>
 </body>
-<script>
-const container = document.getElementById("container");
-const container2 = document.createElement("div");
-let rows = document.getElementsByClassName("gridRow");
-let cells = document.getElementsByClassName("cell");
-let chooseGrid = document.querySelector("button")
-
-chooseGrid.addEventListener('click', function() {
-    let rowSize = window.prompt('Row Size:');
-    console.log(rowSize);
-    let cellSize = window.prompt('Cell Size:');
-    console.log(cellSize);
-    
-
-    container2.replaceChild = defaultGrid();
-
-    function defaultGrid() {
-        makeRows(rowSize);
-        makeColumns(cellSize);
-    }
-
-    //Criar linha 
-    function makeRows(rowNum) {
-        for (r = 0; r < rowNum; r++) {
-            let row = document.createElement("div");
-            container2.appendChild(row).className = "gridRow";
-        };
-    };
-
-    function makeColumns(cellNum) {
-        for (i = 0; i < rows.length; i++) {
-            for (j = 0; j < cellNum; j++) {
-                let newCell = document.createElement("div");
-                rows[j].appendChild(newCell).className = "cell";
-            };
-        };
-    };
-
-})
-
-defaultGrid();
-
-function defaultGrid() {
-    makeRows(10);
-    makeColumns(10);
-}
-
-//Criar linha 
-function makeRows(rowNum) {
-    for (r = 0; r < rowNum; r++) {
-        let row = document.createElement("div");
-        container.appendChild(row).className = "gridRow";
-    };
-};
-
-function makeColumns(cellNum) {
-    for (i = 0; i < rows.length; i++) {
-        for (j = 0; j < cellNum; j++) {
-            let newCell = document.createElement("div");
-            rows[j].appendChild(newCell).className = "cell";
-        };
-    };
-};
-
-
-
-</script>
+<script src="main.js"></script>
 </html>

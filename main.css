@@ -1,3 +1,13 @@
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 60%;
+}
 body {
     background-color: #4774EE;
 }
@@ -9,17 +19,26 @@ h1 {
     padding: 10px;
 }
 
+.container {
+    padding: 0 2vw;
+    display: flex;
+    justify-content: center;
+}
 .controles {
     background-color: #0440D6;
-    width: 300px;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     border-radius: 20px;
+    width: 400px;
+    height: 200px;
 }
 
 .controlesInterior {
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 h3 {
     color: white;
@@ -36,8 +55,33 @@ h3 {
 button {
     border-radius: 10px;
     border: 1px white;
+    margin: 5px;
 }
-.controles, h3, .gridSize, button, input {
+.controles, h3, .gridSize, input {
     margin: 0px;
     padding: 5px;
+}
+
+.apply {
+    display: block;
+}
+
+.grid {
+    border: 2px solid #a8dadc;
+    border-radius: 1rem;
+    width: 70rem;
+    height: 70rem;
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.box {
+    border: 0.5px solid yellow;
+    border-radius: 0.5rem;
+}
+
+.box.active {
+    background-color: blue;
 }

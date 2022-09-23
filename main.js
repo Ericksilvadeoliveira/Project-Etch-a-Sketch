@@ -1,6 +1,11 @@
 const grid = document.querySelector(".grid");
 let gridValue = document.querySelector(".gridSize");
-let gridSize = document.querySelector(".gridSize");
+let gridSize = document.querySelector("input");
+const resetBtn = document.querySelector(".reset");
+const applyGridSize = document.querySelector(".apply");
+let squareSize = 8;
+
+createGrid(squareSize);
 
 function createDiv (size) {
     const div = document.createElement("div");
@@ -18,3 +23,27 @@ function createGrid (gridSize) {
         }
     }
 }
+
+function reset () {
+    while (grid.firstChild) {
+        grid.removeChild(grid.lastChild);
+    }
+    createGrid(squareSize);
+}
+
+grid.addEventListener('mouseover', function (e) {
+        if (e.target.matches('.box')) {
+            e.target.classList.add('active');
+        }
+    });
+
+gridSize.addEventListener('input', function (e) {
+    squareSize = e.target.value;
+    gridValue.textContent = `${squareSize}x${squareSize}`;
+});
+
+applyGridSize.addEventListener('click', function () {
+    reset();
+})
+
+resetBtn.addEventListener('click', reset);
